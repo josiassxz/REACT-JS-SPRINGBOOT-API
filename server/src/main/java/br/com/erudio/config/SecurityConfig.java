@@ -40,10 +40,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.antMatchers("/auth/signin", "/api-docs/**", "/swagger-ui.html**").permitAll()
 				.antMatchers("/api/**").authenticated()
 				.antMatchers("/users").denyAll()
-			.and()
+				.and()
 				.cors()
-			.and()
-			.apply(new JwtConfigurer(tokenProvider));
+				.and()
+				.apply(new JwtConfigurer(tokenProvider));
 	}
 
 }
